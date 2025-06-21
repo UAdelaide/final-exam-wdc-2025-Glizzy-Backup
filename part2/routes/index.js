@@ -6,10 +6,10 @@ router.get('/', async (req, res) => {
     if (req.session.user) {
         const role = req.session.user.role;
 
-        if (role === 'owner') {
+        if (role == 'owner') {
             res.sendFile(path.join(__dirname, '../public/owner-dashboard.html'));
 
-        } else if (role === 'walker') {
+        } else if (role == 'walker') {
             res.sendFile(path.join(__dirname, '../public/walker-dashboard.html'));
         }
     }
