@@ -42,7 +42,7 @@ let db;
     // Create a table if it doesn't exist
 
     await db.execute(
-        fs.readFile("./mytext.txt", function(text){
+        fs.readFile("./dogwalks.sql", function(text){
             var textByLine = text.split("\n");
         })
     );
