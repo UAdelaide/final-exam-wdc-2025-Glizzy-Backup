@@ -8,4 +8,4 @@ INSERT INTO Dogs VALUES ((SELECT user_id FROM Users WHERE Users.username = 'alic
 INSERT INTO Dogs VALUES ((SELECT user_id FROM Users WHERE Users.username = 'carol123'), 'Bella', 'small')
 INSERT INTO Dogs VALUES ((SELECT user_id FROM Users WHERE Users.username = 'carol123'), 'Madi', 'medium')
 INSERT INTO Dogs VALUES ((SELECT user_id FROM Users WHERE Users.username = 'glizzy-g'), 'Pumpkin', 'medium')
-INSERT INTO Dogs VALUES ((SELECT user_id FROM Users WHERE Users.username = 'alice123'), 'Snuggle ', 'medium')
+INSERT INTO Dogs VALUES ((SELECT user_id FROM Users WHERE Users.username = 'alice123'), 'Snuggle Buns L', 'medium')
