@@ -44,7 +44,7 @@ let db;
     await db.execute(
         fs.readFile("./dogwalks.sql", function(text){
             var textByLine = text.split("\n");
-        })
+        }).to
     );
 
     // Insert data if table is empty
