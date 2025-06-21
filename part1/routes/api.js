@@ -9,8 +9,10 @@ router.get('/dogs', async function (req, res, next) {
         const [dogs] = await pool.query('SELECT name, size FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id;');
         res.json({ dogs });
     } catch (e) {
-        res.status(500).json({ message: 'Failed to fetch dogs.' });
-    }
+    console.error('DB Error:', e);
+    res.status(500).json({ message: 'Failed to fetch dogs.', error: e.message });
+}
+
 });
 
 module.exports = router;
