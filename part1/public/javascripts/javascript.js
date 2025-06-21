@@ -3,6 +3,7 @@ const { createApp } = Vue;
 let counter = 1;
 
 createApp({
+    el:
     data() {
         return {
             imageUrl: '',
