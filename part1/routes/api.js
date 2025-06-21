@@ -4,7 +4,9 @@ var pool = require('../db');
 
 /* GET home page. */
 router.get('/dogs', async function(req, res, next) {
-  res.render('index', { title: 'Express' });
+    try{
+        const dogs = 
+    }
 });
 
 module.exports = router;
