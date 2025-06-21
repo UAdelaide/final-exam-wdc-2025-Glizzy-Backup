@@ -12,7 +12,8 @@ let db;
       password: '' // Set your MySQL root password
     });
 
-    // Create the database if it doesn't exist
+    // Create dogwalks.sql db. Note that this will reset the database every time
+    // (suitable as this is for testing purposes)
     await connection.query(fs.readFileSync('./dogwalks.sql', 'utf-8'));
     await connection.end();
 
@@ -23,10 +24,6 @@ let db;
       password: '',
       database: 'DogWalkService'
     });
-
-    // Insert dogwalks.sql data. Note that this will reset the database every time
-    // (suitable as this is for testing purposes)
-
 
     // Insert test data
     await db.execute(
