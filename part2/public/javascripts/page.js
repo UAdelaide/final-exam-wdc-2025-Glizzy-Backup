@@ -26,42 +26,6 @@ function showMain(){
     document.getElementById('post-tags').value = '';
 }
 
-/*
- * Creates a new question/post & send it to the server, before triggering an update for the main part of the page.
- */
-function createPost(){
-
-    search = null;
-
-    let post = {
-        title: document.getElementById('post-title').value,
-        content: document.getElementById('post-content').value,
-        tags: document.getElementById('post-tags').value.split(" "),
-        upvotes: 0
-    };
-
-    // Create AJAX Request
-    var xmlhttp = new XMLHttpRequest();
-
-    // Define function to run on response
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            // Update the page on success
-            loadPosts();
-            showMain();
-        }
-    };
-
-    // Open connection to server & send the post data using a POST request
-    // We will cover POST requests in more detail in week 8
-    xmlhttp.open("POST", "/addpost", true);
-    xmlhttp.setRequestHeader("Content-type", "application/json");
-    xmlhttp.send(JSON.stringify(post));
-
-}
-
-
-
 
 /*
  * Reloads the posts shown on the page
@@ -145,6 +109,40 @@ function loadPosts() {
 
     // Send request
     xmlhttp.send();
+
+}
+
+/*
+ * Creates a new question/post & send it to the server, before triggering an update for the main part of the page.
+ */
+function createPost(){
+
+    search = null;
+
+    let post = {
+        title: document.getElementById('post-title').value,
+        content: document.getElementById('post-content').value,
+        tags: document.getElementById('post-tags').value.split(" "),
+        upvotes: 0
+    };
+
+    // Create AJAX Request
+    var xmlhttp = new XMLHttpRequest();
+
+    // Define function to run on response
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // Update the page on success
+            loadPosts();
+            showMain();
+        }
+    };
+
+    // Open connection to server & send the post data using a POST request
+    // We will cover POST requests in more detail in week 8
+    xmlhttp.open("POST", "/addpost", true);
+    xmlhttp.setRequestHeader("Content-type", "application/json");
+    xmlhttp.send(JSON.stringify(post));
 
 }
 
