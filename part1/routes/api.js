@@ -18,7 +18,7 @@ router.get('/dogs', async function (req, res, next) {
 router.get('/walkrequests/open', async function (req, res, next) {
     try {
         const pool = await promisedPool;
-        // Try to fetch dogs from db.
+        // Try to fetch walk requests from db.
         const [requests] = await pool.query('SELECT request_id, name, requested_time, duration_minutes, location, username FROM WalkRequests INNER JOIN (Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id) ON WalkRequests.dog_id = Dogs.dog_id WHERE status=\'open\';');
         res.json(requests.map(request => ({request_id: request.request_id, dog_name: request.name, requested_time: request.requested_time, duration_minutes: request.duration_minutes, location: request.location, owner_username: request.username})));
     } catch (e) {
