@@ -24,8 +24,7 @@ let pool;
       user: 'root',
       password: '',
       database: 'DogWalkService',
-      connectionLimit: 10,
-      multipleStatements: true
+      connectionLimit: 10
     });
 
     let db = await pool.getConnection();
