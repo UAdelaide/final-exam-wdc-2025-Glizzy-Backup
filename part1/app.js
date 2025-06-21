@@ -42,7 +42,7 @@ let db;
     // Insert dogwalks.sql data. Note that this will reset the database every time
     // (suitable as this is for testing purposes)
     await db.execute(
-        fs.readFileSync("./mytext.txt").toString('utf-8')
+        fs.readFileSync('./dogwalks.sql').toString('utf-8')
     );
 
     // Insert test data
