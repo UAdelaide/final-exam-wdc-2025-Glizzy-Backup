@@ -187,7 +187,7 @@ function login(){
     // Define function to run on response
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            let rows = this.responseText.json();
+            let rows = JSON.parse(this.responseText);
             if(rows.role == "owner"){
                 window.location.href = "owner-dashboard.html";
             }else if(rows.role == "walker"){
