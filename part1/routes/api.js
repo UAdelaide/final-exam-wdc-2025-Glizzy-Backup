@@ -3,7 +3,7 @@ var router = express.Router();
 var pool = require('../db');
 
 /* GET home page. */
-router.get('/dogs', function(req, res, next) {
+router.get('/dogs', async function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
