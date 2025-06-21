@@ -3,7 +3,7 @@ var fs = require('fs');
 
 let pool;
 
-(async () => {
+const promisedPool = (async () => {
   try {
     // Connect to MySQL without specifying a database
     const connection = await mysql.createConnection({
@@ -34,6 +34,11 @@ let pool;
     await db.query(
         fs.readFileSync('./part5.sql', 'utf-8')
     );
+
+    db.release();
+
+    return pool;
+
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
