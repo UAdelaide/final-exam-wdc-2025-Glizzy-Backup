@@ -8,7 +8,7 @@ router.get('/dogs', async function(req, res, next) {
         let dogs = await pool.query('SELECT name, size FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id;');
         res.json({ dogs });
     } catch(e){
-        console.error('Error fetching dogs');
+        res.status()
     }
 });
 
