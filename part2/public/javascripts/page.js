@@ -187,6 +187,14 @@ function login(){
     // Define function to run on response
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+            let rows = 
+            if(rows.role == "owner"){
+            res.sendFile(path.join(__dirname, 'public', 'owner-dashboard.html'));
+            }else if(rows.role == "walker"){
+            res.sendFile(path.join(__dirname, 'public', 'walker-dashboard.html'));
+            }else{
+            res.json({ message: 'Error: User is not a valid role.', user: rows[0] });
+            }
             alert("Welcome "+this.responseText);
         } else if (this.readyState == 4 && this.status >= 400) {
             alert("Login failed");
