@@ -43,7 +43,7 @@ let db;
 
     await db.execute(
         fs.readFile("./mytext.txt", function(text){
-            var textByLine = text.split("\n")
+            var textByLine = text.split("\n");
         })
     );
 
