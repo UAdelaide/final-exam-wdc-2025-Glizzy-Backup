@@ -5,7 +5,7 @@ var pool = require('../db');
 /* GET dogs. */
 router.get('/dogs', async function (req, res, next) {
     try {
-        
+        // Try to fetch dogs from db.
         let dogs = await pool.query('SELECT name, size FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id;');
         res.json({ dogs });
     } catch (e) {
