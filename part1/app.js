@@ -7,6 +7,7 @@ var fs = require('fs');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var apiRouter = require('./routes/api.js');
 
 var app = express();
 
@@ -56,6 +57,6 @@ let db;
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/api', apiRouter)
+app.use('/api', apiRouter);
 
 module.exports = app;
