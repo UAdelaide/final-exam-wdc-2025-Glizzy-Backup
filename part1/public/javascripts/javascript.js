@@ -15,7 +15,6 @@ createApp({
             document.getElementById("reveal").style.left = Math.random()*100+"%";
 
             if(counter>3){
-                
                 this.visible = true;
                 this.GetDog();
             }else{
