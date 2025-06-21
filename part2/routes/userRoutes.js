@@ -48,7 +48,7 @@ router.post('/login', async (req, res) => {
       WHERE email = ? AND password_hash = ?
     `, [email, password]);
 
-    // If no entries match 
+    // If no entries match a db record return a 401.
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
