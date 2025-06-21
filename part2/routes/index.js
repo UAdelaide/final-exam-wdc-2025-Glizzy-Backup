@@ -1,15 +1,9 @@
 const express = require('express');
-const path = require('path');
 const router = express.Router();
 const db = require('../models/db');
 
 router.get('/', async (req, res) => {
-    try {
-        const [rows] = await db.query('SELECT user_id, username, email, role FROM Users');
-        res.json(rows);
-    } catch (error) {
-        res.status(500).json({ error: 'Failed to fetch users' });
-    }
+    
 });
 
 module.exports = router;
