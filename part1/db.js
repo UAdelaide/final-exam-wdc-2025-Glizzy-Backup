@@ -44,4 +44,4 @@ const promisedPool = (async () => {
   }
 })();
 
-module.exports = pool;
+module.exports = poolPromise;
