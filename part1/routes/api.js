@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var pool = require('../db.')
+var pool = require('../pool')
 
 /* GET home page. */
 router.get('/dogs', function(req, res, next) {
