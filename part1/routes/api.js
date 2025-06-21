@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var pool = require('../db.js');
+var pool = require('../db');
 
 /* GET dogs. */
 router.get('/dogs', async function (req, res, next) {

@@ -35,6 +35,8 @@ const promisedPool = (async () => {
         fs.readFileSync('./part5.sql', 'utf-8')
     );
 
+    db.release();
+
     return pool;
 
   } catch (err) {
