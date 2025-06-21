@@ -9,6 +9,12 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));// Parses HTML form data
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
+app.use(session({
+  secret: 'super-secret-key', // 🔐 change this in production
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: false } // set to true if using HTTPS
+}));
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
