@@ -31,9 +31,7 @@ router.get('/walkers/summary', async function (req, res, next) {
     try {
         const pool = await promisedPool;
         // Try to fetch dogs from db.
-        const [walkers] = await pool.query('SELECT
-  u.username AS walker_username,
-  COUNT(r.rating_id) AS total_ratings,
+        const [walkers] = await pool.query('SELECT username, COUNT(rating_id) AS total_ratings,
   ROUND(AVG(r.rating), 1) AS average_rating,
   COUNT(DISTINCT CASE WHEN wr.status = 'completed' THEN wr.request_id END) AS completed_walks
 FROM Users u
