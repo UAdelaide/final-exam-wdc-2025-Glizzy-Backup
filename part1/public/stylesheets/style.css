@@ -13,4 +13,5 @@ body {
 
 button {
   position: absolute;
+  background-color: transparent;
 }
