@@ -15,8 +15,8 @@
     <h1 class="mb-4 text-primary">{{ message }}</h1>
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
 
-    <form @submit.prevent="login">
-      <input v-model="loginData.identifier" placeholder="Email or Username" aria-label="Email or Username" required />
+    <form>
+      <input placeholder="Username" aria-label="Email or Username" required />
       <input v-model="loginData.password" type="password" placeholder="Password" aria-label="Password" required />
       <button type="submit">Login</button>
     </form>
