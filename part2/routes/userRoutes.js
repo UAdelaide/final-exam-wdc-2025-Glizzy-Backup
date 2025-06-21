@@ -55,10 +55,7 @@ router.post('/login', async (req, res) => {
 
         // Stores user in a session.
         // Note that users with invalid roles will not get sessions stored.
-        req.session.user = {
-            id: rows[0].user_id,
-            role: rows[0].role
-        };
+
 
         // If the user is an owner or a walker, serve the appropriate page.
         // Also handles no role/invalid role.
