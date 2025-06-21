@@ -22,7 +22,8 @@ let db;
       host: 'localhost',
       user: 'root',
       password: '',
-      database: 'DogWalkService'
+      database: 'DogWalkService',
+      connectionLimit: 10
     });
 
     // Insert test data
