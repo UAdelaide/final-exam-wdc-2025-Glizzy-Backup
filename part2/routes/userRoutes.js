@@ -60,7 +60,7 @@ router.post('/login', async (req, res) => {
         } else if (rows[0].role == "walker") {
             res.sendFile(path.join(__dirname, '../public/walker-dashboard.html'));
         } else {
-            return res.status(500).json({ error: 'Invalid credentials' });
+            return res.status(500).json({ error: 'User role is invalid.' });
         }
     } catch (error) {
         res.status(500).json({ error: 'Login failed' });
