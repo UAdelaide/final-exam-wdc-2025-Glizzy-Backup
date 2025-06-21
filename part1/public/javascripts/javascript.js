@@ -12,12 +12,5 @@ createApp({
             const data = await res.json();
             this.imageUrl = data.message;
         }
-    },
-    mounted() {
-        this.getDog();
     }
 }).mount('#app');
-
-async function GetDog(){
-    
-}
