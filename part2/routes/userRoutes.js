@@ -81,6 +81,7 @@ router.post('/logout', async (req, res) => {
             return res.status(500).send('Logout failed');
         }
 
+        
         res.clearCookie('connect.sid');
         res.redirect('/');
     }));
