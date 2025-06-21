@@ -50,7 +50,7 @@ router.post('/login', async (req, res) => {
     }
 
     if(rows.role == "owner"){
-        window.location.href = "owner-dashboard.html";
+        res.sendFile();
     }else if(rows.role == "walker"){
         window.location.href = "walker-dashboard.html";
     }else{
