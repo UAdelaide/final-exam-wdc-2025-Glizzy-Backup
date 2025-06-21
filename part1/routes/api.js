@@ -5,7 +5,7 @@ var pool = require('../db');
 /* GET home page. */
 router.get('/dogs', async function(req, res, next) {
     try{
-        const dogs = 
+        let dogs = await pool.query('')
     }
 });
 
