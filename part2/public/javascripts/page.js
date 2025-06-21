@@ -189,7 +189,7 @@ function login(){
         if (this.readyState == 4 && this.status == 200) {
             let rows = this.responseText.json();
             if(rows.role == "owner"){
-                res.sendFile(path.join(__dirname, 'public', 'owner-dashboard.html'));
+                window.location.href = 
             }else if(rows.role == "walker"){
                 res.sendFile(path.join(__dirname, 'public', 'walker-dashboard.html'));
             }else{
