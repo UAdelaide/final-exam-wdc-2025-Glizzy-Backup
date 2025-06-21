@@ -28,6 +28,7 @@ let pool;
       multipleStatements: true
     });
 
+    pool.exe
     let db = await pool.getConnection();
 
     // Insert test data
