@@ -15,3 +15,5 @@ INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, st
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location) VALUES ((SELECT dog_id FROM Dogs WHERE Dogs.name = 'Madi'), '2025-06-10 08:00:00', 30, 'Thorndon Park');
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location) VALUES ((SELECT dog_id FROM Dogs WHERE Dogs.name = 'Pumpkin'), '2025-06-10 08:00:00', 30, 'Bowser''s Castle');
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location) VALUES ((SELECT dog_id FROM Dogs WHERE Dogs.name = 'Snuggle Buns Lovey Dove'), '2025-06-10 08:00:00', 30, 'Narnia');
+
+INSERT INTO 
