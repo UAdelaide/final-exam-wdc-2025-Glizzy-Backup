@@ -13,7 +13,7 @@ let db;
     });
 
     // Create the database if it doesn't exist
-    await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
+    await connection.query(fs.readFileSync('./dogwalks.sql', 'utf-8'));
     await connection.end();
 
     // Now connect to the created database
@@ -26,9 +26,7 @@ let db;
 
     // Insert dogwalks.sql data. Note that this will reset the database every time
     // (suitable as this is for testing purposes)
-    await db.execute(
-        fs.readFileSync('./dogwalks.sql', 'utf-8')
-    );
+
 
     // Insert test data
     await db.execute(
