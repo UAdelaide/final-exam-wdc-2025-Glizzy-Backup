@@ -19,7 +19,7 @@ router.get('/walkrequests/open', async function (req, res, next) {
     try {
         const pool = await promisedPool;
         // Try to fetch dogs from db.
-        const [requests] = await pool.query('SELECT request_id, name, requested_time, duration_minutes, location, username FROM WalkRequests INNER JOIN (Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id) ON requests.dog_id = dog_id WHERE status=\'open\';');
+        const [requests] = await pool.query('SELECT request_id, name, requested_time, duration_minutes, location, username FROM WalkRequests INNER JOIN (Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id) ON WalkRequests.dog_id = Dogsdog_id WHERE status=\'open\';');
         res.json({ request_id: requests.request_id, dog_name: requests.dog_name, requested_time: requests.requested_time, duration_minutes: requests.duration_minutes, location: requests.loaction, owner_username: requests.username });
     } catch (e) {
         res.status(500).json({ message: 'Failed to fetch open walk requests.', error: e.message });
