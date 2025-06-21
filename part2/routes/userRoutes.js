@@ -53,7 +53,10 @@ router.post('/login', async (req, res) => {
       res.sendFile(path.join(__dirname, 'public', 'owner-dashboard.html'));
     }else if(rows.role == "walker"){
       res.sendFile(path.join(__dirname, 'public', 'walker-dashboard.html'));
+    }else{
+      res.json({ message: 'Login successful', user: rows[0] });
     }
+
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
   }
