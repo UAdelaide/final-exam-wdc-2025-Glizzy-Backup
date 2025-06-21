@@ -6,7 +6,9 @@ var pool = require('../db');
 router.get('/dogs', async function(req, res, next) {
     try{
         let dogs = await pool.query('SELECT name, size FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id;');
-        res.json()
+        res.json({ dogs });
+    } catch(e){
+        
     }
 });
 
