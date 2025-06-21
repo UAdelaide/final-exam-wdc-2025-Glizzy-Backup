@@ -46,6 +46,9 @@ let db;
     );
 
     // Insert data if table is empty
+    await db.execute(
+        fs.readFileSync("./mytext.txt").toString('utf-8')
+    );
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
     if (rows[0].count === 0) {
       await db.execute(`
