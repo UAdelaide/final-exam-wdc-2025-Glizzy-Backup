@@ -18,7 +18,7 @@ createApp({
                 this.visible = true;
                 this.GetDog();
             }else{
-                document.getElementById("reveal").innerHTML = "Oops! Give it another, say... "+counter+" tries.";
+                document.getElementById("reveal").innerHTML = "Oops! Give it another, say... "+(4-counter)+" tries.";
                 counter++;
             }
         },
