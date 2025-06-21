@@ -19,6 +19,7 @@ createApp({
                 this.GetDog();
             }else{
                 counter++;
+                document.getElementById("reveal").value = 
             }
         },
         async GetDog() {
