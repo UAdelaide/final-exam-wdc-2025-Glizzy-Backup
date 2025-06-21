@@ -49,6 +49,12 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
+    if(rows.role == "owner"){
+        window.location.href = "owner-dashboard.html";
+    }else if(rows.role == "walker"){
+        window.location.href = "walker-dashboard.html";
+    }
+
     res.json({ message: 'Login successful', user: rows[0] });
 
   } catch (error) {

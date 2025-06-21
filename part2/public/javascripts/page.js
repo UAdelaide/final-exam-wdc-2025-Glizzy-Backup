@@ -187,12 +187,7 @@ function login(){
     // Define function to run on response
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            let rows = JSON.parse(this.responseText).user;
-            if(rows.role == "owner"){
-                window.location.href = "owner-dashboard.html";
-            }else if(rows.role == "walker"){
-                window.location.href = "walker-dashboard.html";
-            }
+
             alert("Welcome "+this.responseText);
         } else if (this.readyState == 4 && this.status >= 400) {
             alert("Login failed");
