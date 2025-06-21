@@ -49,9 +49,9 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
-    if(rows.user.role == "owner"){
+    if(rows[0].role == "owner"){
         res.sendFile(path.join(__dirname, '../public/owner-dashboard.html'));
-    }else if(rows.user.role == "walker"){
+    }else if(rows[0].role == "walker"){
         res.sendFile(path.join(__dirname, '../public/walker-dashboard.html'));
     }else{
         res.json({ message: 'Invalid role', user: rows[0] });
