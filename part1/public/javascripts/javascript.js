@@ -7,7 +7,8 @@ createApp({
         };
     },
     methods: {
-        async getDog() {
+        
+        async reveal() {
             const res = await fetch('https://dog.ceo/api/breeds/image/random');
             const data = await res.json();
             this.imageUrl = data.message;
