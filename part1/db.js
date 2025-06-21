@@ -32,7 +32,7 @@ const promisedPool = (async () => {
 
     // Insert test data
     await db.query(
-        fs.readFileSync('./part5.sql', 'utf-8')
+      fs.readFileSync('./part5.sql', 'utf-8')
     );
 
     db.release();
