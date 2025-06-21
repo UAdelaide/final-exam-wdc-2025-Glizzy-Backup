@@ -39,7 +39,7 @@ let db;
       database: 'DogWalkService'
     });
 
-    // Insert dogwalks.sql data. Note that t
+    // Insert dogwalks.sql data. Note that this will reset the database every time (suitable as this is )
     await db.execute(
         fs.readFileSync("./mytext.txt").toString('utf-8')
     );
