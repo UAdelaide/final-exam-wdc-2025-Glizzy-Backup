@@ -14,7 +14,7 @@ let pool;
 
     // Create dogwalks.sql db. Note that this will reset the database every time
     // (suitable as this is for testing purposes)
-    fs.readFileSync('./dogwalks.sql', 'utf-8').split('/n').forEach(query=>{
+    async fs.readFile('./dogwalks.sql', 'utf-8').split('/n').forEach(query=>{
         await connection.query(query);
     })
     await connection.end();
