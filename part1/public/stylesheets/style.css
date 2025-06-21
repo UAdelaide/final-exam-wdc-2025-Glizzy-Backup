@@ -6,3 +6,31 @@ body {
 a {
   color: #00B7FF;
 }
+
+body {
+  background: linear-gradient(45deg, red, yellow, lime, cyan, blue, magenta);
+  font-family: Comic Sans MS, cursive, sans-serif;
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+button {
+  position: absolute;
+  left: 40%;
+  top: 90%;
+}
+
+.dog-info {
+  font-size: 24px;
+  text-shadow: 1px 1px 5px black;
+  color: white;
+}
