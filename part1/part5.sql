@@ -5,3 +5,7 @@ INSERT INTO Users VALUES ('glizzy-g', 'gliccy.g@example.com', 'hashed50', 'owner
 INSERT INTO Users VALUES ('busy-g', 'busy.g@example.com', 'hashed150', 'walker')
 
 INSERT INTO Dogs VALUES ((SELECT user_id FROM Users WHERE Users.username = 'alice123'), 'Max', 'medium')
+INSERT INTO Dogs VALUES ((SELECT user_id FROM Users WHERE Users.username = 'carol123'), 'Bella', 'medium')
+INSERT INTO Dogs VALUES ((SELECT user_id FROM Users WHERE Users.username = 'alice123'), 'Max', 'medium')
+INSERT INTO Dogs VALUES ((SELECT user_id FROM Users WHERE Users.username = 'alice123'), 'Max', 'medium')
+INSERT INTO Dogs VALUES ((SELECT user_id FROM Users WHERE Users.username = 'alice123'), 'Max', 'medium')
