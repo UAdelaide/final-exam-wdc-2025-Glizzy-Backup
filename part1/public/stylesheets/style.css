@@ -14,9 +14,3 @@ body {
 button {
   position: absolute;
 }
-
-.dog-info {
-  font-size: 24px;
-  text-shadow: 1px 1px 5px black;
-  color: white;
-}
