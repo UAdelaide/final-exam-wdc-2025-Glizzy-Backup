@@ -39,8 +39,7 @@ router.get('/me', (req, res) => {
 // POST login (dummy version)
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
-    res.sendFile(path.join(__dirname, '../public/owner-dashboard.html'));
-  try {
+  //try {
     const [rows] = await db.query(`
       SELECT user_id, username, role FROM Users
       WHERE email = ? AND password_hash = ?
@@ -57,9 +56,9 @@ router.post('/login', async (req, res) => {
     }else{
         res.json({ message: 'Invalid role', user: rows[0] });
     }
-  } catch (error) {
-    res.status(500).json({ error: 'Login failed' });
-  }
+  //} catch (error) {
+    //res.status(500).json({ error: 'Login failed' });
+  //}
 });
 
 module.exports = router;
