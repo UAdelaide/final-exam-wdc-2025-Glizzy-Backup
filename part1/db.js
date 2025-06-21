@@ -1,7 +1,7 @@
 var mysql = require('mysql2/promise');
 var fs = require('fs');
 
-let db;
+let pool;
 
 (async () => {
   try {
