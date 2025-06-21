@@ -8,7 +8,7 @@ const app = express();
 // Middleware
 app.use(express.urlencoded({ extended: true }));// Parses HTML form data
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(__dirname, '/public')));   
 app.use(session({
   secret: 'session-key-for-testing',
   resave: false,
