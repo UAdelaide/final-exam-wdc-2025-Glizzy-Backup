@@ -1,6 +1,6 @@
 const { createApp } = Vue;
 
-let counter = 0;
+let counter = 1;
 
 createApp({
     data() {
@@ -18,8 +18,8 @@ createApp({
                 this.visible = true;
                 this.GetDog();
             }else{
+                document.getElementById("reveal").value = "Oops! Give it another, say... "
                 counter++;
-                document.getElementById("reveal").value = 
             }
         },
         async GetDog() {
