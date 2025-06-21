@@ -39,13 +39,12 @@ let db;
       database: 'DogWalkService'
     });
 
-    // Create a table if it doesn't exist
-
+    // Insert 
     await db.execute(
         fs.readFileSync("./mytext.txt").toString('utf-8')
     );
 
-    // Insert data if table is empty
+    // Insert test data
     await db.execute(
         fs.readFileSync("./mytext.txt").toString('utf-8')
     );
