@@ -26,7 +26,7 @@ let pool;
       connectionLimit: 10
     });
 
-    let db = await pool.createConnection
+    let db = await pool.getConnection();
 
     // Insert test data
     await db.execute(
