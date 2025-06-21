@@ -27,7 +27,7 @@ router.get('/walkrequests/open', async function (req, res, next) {
 });
 
 /* GET dogs. */
-router.get('/dogs', async function (req, res, next) {
+router.get('/walkers/summary', async function (req, res, next) {
     try {
         const pool = await promisedPool;
         // Try to fetch dogs from db.
