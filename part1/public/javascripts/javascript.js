@@ -11,6 +11,11 @@ createApp({
     },
     methods: {
         Reveal(){
+            const top = Math.floor(Math.random() * 90);
+            const left = Math.floor(Math.random() * 90);
+            this.buttonStyle.top = `${top}%`;
+            this.buttonStyle.left = `${left}%`;
+
             if(counter>3){
                 this.visible = true;
                 this.GetDog();
