@@ -78,8 +78,8 @@ router.post('/login', async (req, res) => {
 router.post('/logout', async (req, res) => {
     req.session.destroy(err => {
         if (err) {
-        console.error('Logout error:', err);
-        return res.status(500).send('Logout failed');
+            console.error('Logout error:', err);
+            return res.status(500).send('Logout failed');
         }
 
         // Clear the session cookie
