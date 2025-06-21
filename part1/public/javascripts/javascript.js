@@ -14,7 +14,7 @@ createApp({
             const top = Math.floor(Math.random() * 90);
             const left = Math.floor(Math.random() * 90);
             this.buttonStyle.top = ``;
-            this.buttonStyle.left = Math.floor(Math.random()*100);
+            this.buttonStyle.left = Math.random()*100+"%";
 
             if(counter>3){
                 this.visible = true;
