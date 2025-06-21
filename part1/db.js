@@ -34,7 +34,9 @@ const promisedPool = (async () => {
     await db.query(
         fs.readFileSync('./part5.sql', 'utf-8')
     );
+
     return pool;
+
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
