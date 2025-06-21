@@ -11,8 +11,6 @@ router.get('/', async (req, res) => {
 
         } else if (role === 'walker') {
             res.sendFile(path.join(__dirname, '../public/walker-dashboard.html'));
-        }else{
-            alert('asd');
         }
     }
 
