@@ -42,9 +42,7 @@ let db;
     // Create a table if it doesn't exist
 
     await db.execute(
-        fs.readFile("./dogwalks.sql", function(text){
-            var textByLine = text.split("\n");
-        }).to
+        fs.readFileSync("./mytext.txt").toString('utf-8')
     );
 
     // Insert data if table is empty
