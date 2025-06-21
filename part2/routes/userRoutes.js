@@ -54,12 +54,13 @@ router.post('/login', async (req, res) => {
     }
 
     // If the user is an owner or a walker, serve the appropriate page.
+    // Also handles no role/invalid role.
     if(rows[0].role == "owner"){
         res.sendFile(path.join(__dirname, '../public/owner-dashboard.html'));
     }else if(rows[0].role == "walker"){
         res.sendFile(path.join(__dirname, '../public/walker-dashboard.html'));
     }else{
-        res.json({ message: 'Invalid role', user: rows[0] });
+      return res.status(401).json({ error: 'Invalid credentials' });
     }
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
