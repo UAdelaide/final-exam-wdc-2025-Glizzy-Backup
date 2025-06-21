@@ -8,7 +8,7 @@ router.get('/dogs', async function (req, res, next) {
         const pool = await promisedPool;
         // Try to fetch dogs from db.
         const [dogs] = await pool.query('SELECT name, size, username FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id;');
-        res.json({ dogs });
+        res.json({ dog_name: dogs.name,  });
     } catch (e) {
         res.status(500).json({ message: 'Failed to fetch dogs.', error: e.message });
     }
