@@ -60,15 +60,7 @@ function createPost(){
 
 }
 
-/*
- * Updates the search term then reloads the posts shown
- */
-function searchPosts(){
 
-    search = document.getElementById('post-search').value.toUpperCase();
-    updatePosts();
-
-}
 
 
 /*
@@ -124,6 +116,16 @@ function updatePosts() {
 
     }
 
+
+}
+
+/*
+ * Updates the search term then reloads the posts shown
+ */
+function searchPosts(){
+
+    search = document.getElementById('post-search').value.toUpperCase();
+    updatePosts();
 
 }
 
