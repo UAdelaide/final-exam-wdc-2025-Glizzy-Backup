@@ -16,4 +16,4 @@ INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location) VA
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location) VALUES ((SELECT dog_id FROM Dogs WHERE Dogs.name = 'Pumpkin'), '2025-06-10 08:00:00', 30, 'Bowser''s Castle');
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location) VALUES ((SELECT dog_id FROM Dogs WHERE Dogs.name = 'Snuggle Buns Lovey Dove'), '2025-06-10 08:00:00', 30, 'Narnia');
 
-INSERT INTO WalkRatings (request_id, walker_id, owner_id, )
+INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
