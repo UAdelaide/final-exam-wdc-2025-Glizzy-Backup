@@ -3,9 +3,7 @@ const router = express.Router();
 const path = require('path');
 
 router.get('/', async (req, res) => {
-    console.log('asd');
     if (req.session.user) {
-        console.log('f');
         const role = req.session.user.role;
 
         if (role == 'owner') {
