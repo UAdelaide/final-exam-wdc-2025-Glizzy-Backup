@@ -1,1 +1,1 @@
-INSERT INTO Users VALUES ()
+INSERT INTO Users VALUES ('')
