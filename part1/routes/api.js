@@ -31,10 +31,7 @@ router.get('/walkers/summary', async function (req, res, next) {
     try {
         const pool = await promisedPool;
         // Try to fetch dogs from db.
-        const [walkers] = await pool.query('SELECT username, COUNT(rating_id), ROUND(AVG(rating), 1), COUNT(DISTINCT CASE WHEN status = \'completed\' THEN request_id END) AS completed_walks
-FROM Users u
-LEFT JOIN WalkRatings r ON u.user_id = r.walker_id
-LEFT JOIN WalkRequests wr ON wr.request_id = r.request_id AND wr.status = 'completed'
+        const [walkers] = await pool.query('SELECT username, COUNT(rating_id), ROUND(AVG(rating), 1), COUNT(DISTINCT CASE WHEN status = \'completed\' THEN request_id END) AS completed_walks FROM Users LEFT JOIN WalkRatings r ON u.user_id = r.walker_id LEFT JOIN WalkRequests wr ON wr.request_id = r.request_id AND wr.status = \'completed'
 WHERE u.role = 'walker'
 GROUP BY u.user_id, u.username
 ORDER BY u.username;
