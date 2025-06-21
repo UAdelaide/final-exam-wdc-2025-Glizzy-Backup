@@ -32,7 +32,7 @@ router.get('/walkers/summary', async function (req, res, next) {
         const pool = await promisedPool;
         // Try to fetch dogs from db.
         const [walkers] = await pool.query('SELECT Users.username, COUNT(WalkRatings.rating_id) AS total_ratings, ROUND(AVG(WalkRatings.rating), 1) AS average_rating, COUNT(DISTINCT CASE WHEN WalkRequests.status = \'completed\' THEN WalkRequests.request_id END) AS completed_walks FROM Users INNER JOIN WalkRatings ON Users.user_id = WalkRatings.walker_id INNER JOIN WalkRequests ON WalkRatings.request_id = WalkRequests.request_id AND WalkRequests.status = \'completed\' WHERE Users.role = \'walker\' GROUP BY Users.user_id, Users.username;');
-        res.json(walkers.map(walker => ({}))});
+        res.json(walkers.map(walker => ({walker_username: walker.username, total_ratings})));
     } catch (e) {
         res.status(500).json({ message: 'Failed to fetch dogs.', error: e.message });
     }
