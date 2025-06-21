@@ -4,4 +4,4 @@ INSERT INTO Users VALUES ('carol123', 'carol@example.com', 'hashed789', 'owner')
 INSERT INTO Users VALUES ('glizzy-g', 'gliccy.g@example.com', 'hashed50', 'owner')
 INSERT INTO Users VALUES ('busy-g', 'busy.g@example.com', 'hashed150', 'walker')
 
-INSERT INTO Dogs
+INSERT INTO Dogs VALUES ('')
