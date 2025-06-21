@@ -28,11 +28,10 @@ let pool;
       multipleStatements: true
     });
 
-    pool.exe
     let db = await pool.getConnection();
 
     // Insert test data
-    await db.execute(
+    await db.query(
         fs.readFileSync('./part5.sql', 'utf-8')
     );
   } catch (err) {
