@@ -4,6 +4,7 @@ const path = require('path');
 
 router.get('/', async (req, res) => {
     if (req.session.user) {
+        alert('asd');
         const role = req.session.user.role;
 
         if (role == 'owner') {
