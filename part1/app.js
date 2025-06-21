@@ -42,12 +42,12 @@ let db;
     // Insert dogwalks.sql data. Note that this will reset the database every time
     // (suitable as this is for testing purposes)
     await db.execute(
-        fs.readFileSync('./dogwalks.sql').toString('utf-8')
+        fs.readFileSync('./dogwalks.sql', 'utf-8')
     );
 
     // Insert test data
     await db.execute(
-        fs.readFileSync("./mytext.txt").toString('utf-8')
+        fs.readFileSync('./part5.sql', 'utf-8')
     );
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
     if (rows[0].count === 0) {
