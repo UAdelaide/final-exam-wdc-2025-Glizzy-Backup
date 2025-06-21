@@ -13,5 +13,5 @@ INSERT INTO Dogs VALUES ((SELECT user_id FROM Users WHERE Users.username = 'alic
 INSERT INTO WalkRequests VALUES ((SELECT dog_id FROM Dogs WHERE Dogs.name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands')
 INSERT INTO WalkRequests VALUES ((SELECT dog_id FROM Dogs WHERE Dogs.name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave')
 INSERT INTO WalkRequests VALUES ((SELECT dog_id FROM Dogs WHERE Dogs.name = 'Madi'), '2025-06-10 08:00:00', 30, 'Thorndon Park')
-INSERT INTO WalkRequests VALUES ((SELECT dog_id FROM Dogs WHERE Dogs.name = 'Max'), '2025-06-10 08:00:00', 30, 'Bowser''s Castle')
-INSERT INTO WalkRequests VALUES ((SELECT dog_id FROM Dogs WHERE Dogs.name = 'Max'), '2025-06-10 08:00:00', 30, 'Narnia')
+INSERT INTO WalkRequests VALUES ((SELECT dog_id FROM Dogs WHERE Dogs.name = 'Pumpkin'), '2025-06-10 08:00:00', 30, 'Bowser''s Castle')
+INSERT INTO WalkRequests VALUES ((SELECT dog_id FROM Dogs WHERE Dogs.name = 'Snuggle Buns Lovey Dove'), '2025-06-10 08:00:00', 30, 'Narnia')
