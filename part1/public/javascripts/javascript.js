@@ -11,7 +11,7 @@ createApp({
     },
     methods: {
         Reveal(){
-            this.buttonStyle.top = Math.random()*100+"%";
+            .buttonStyle.top = Math.random()*100+"%";
             this.buttonStyle.left = Math.random()*100+"%";
 
             if(counter>3){
