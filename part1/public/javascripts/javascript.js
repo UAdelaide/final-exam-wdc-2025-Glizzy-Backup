@@ -1,5 +1,7 @@
 const { createApp } = Vue;
 
+let counter = 0;
+
 createApp({
     data() {
         return {
@@ -9,7 +11,7 @@ createApp({
     },
     methods: {
         Reveal(){
-
+            
         }
         async GetDog() {
             const res = await fetch('https://dog.ceo/api/breeds/image/random');
