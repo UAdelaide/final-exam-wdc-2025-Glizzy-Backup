@@ -3,7 +3,7 @@ var fs = require('fs');
 
 let pool;
 
-(async () => {
+const (async () => {
   try {
     // Connect to MySQL without specifying a database
     const connection = await mysql.createConnection({
