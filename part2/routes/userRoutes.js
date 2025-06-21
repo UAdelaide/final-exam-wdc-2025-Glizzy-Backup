@@ -54,7 +54,7 @@ router.post('/login', async (req, res) => {
     }else if(rows.role == "walker"){
       res.sendFile(path.join(__dirname, 'public', 'walker-dashboard.html'));
     }else{
-      res.json({ message: 'Error: User is not of role ', user: rows[0] });
+      res.json({ message: 'Error: User is not a valid role.', user: rows[0] });
     }
 
   } catch (error) {
