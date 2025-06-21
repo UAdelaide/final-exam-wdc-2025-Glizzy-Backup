@@ -3,10 +3,10 @@ const { createApp } = Vue;
 let counter = 1;
 
 createApp({
-    el:
+    el: "app",
     data() {
         return {
-            imageUrl: '',
+            imageUrl: "",
             visible: false
         };
     },
