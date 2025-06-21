@@ -10,7 +10,7 @@ let pool;
       host: 'localhost',
       user: 'root',
       password: '', // Set your MySQL root password
-      multiple
+      multipleStatements: true
     });
 
     // Create dogwalks.sql db. Note that this will reset the database every time
