@@ -53,6 +53,12 @@ router.post('/login', async (req, res) => {
             return res.status(401).json({ error: 'Invalid credentials' });
         }
 
+        req.session.user = {
+            id: rows[0].user_id,
+            username: rows[0].username,
+            role: rows[0].role
+        };
+
         // If the user is an owner or a walker, serve the appropriate page.
         // Also handles no role/invalid role.
         if (rows[0].role == "owner") {
