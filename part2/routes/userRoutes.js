@@ -36,8 +36,9 @@ router.get('/me', (req, res) => {
   res.json(req.session.user);
 });
 
-// POST login (dummy version)
+// POST Login ------------------------------
 router.post('/login', async (req, res) => {
+  // Get email and password fields from form
   const { email, password } = req.body;
   try {
     const [rows] = await db.query(`
