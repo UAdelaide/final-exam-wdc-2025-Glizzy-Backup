@@ -3,7 +3,6 @@ const { createApp } = Vue;
 let counter = 1;
 
 createApp({
-    el: "app",
     data() {
         return {
             imageUrl: "",
@@ -33,4 +32,4 @@ createApp({
         document.getElementById("reveal").style.top = Math.random()*100+"%";
         document.getElementById("reveal").style.left = Math.random()*100+"%";
     }
-});
+}).mount('#app');
