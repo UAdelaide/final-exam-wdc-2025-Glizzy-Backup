@@ -50,9 +50,9 @@ router.post('/login', async (req, res) => {
     }
 
     if(rows.role == "owner"){
-        res.sendFile();
+        res.sendFile(path.join(__dirname, 'public', 'owner-dashboard.html'))
     }else if(rows.role == "walker"){
-        window.location.href = "walker-dashboard.html";
+        res.sendFile(path.join(__dirname, 'public', 'index.html'))
     }else{
         res.json({ message: 'Login failed', user: rows[0] });
     }
