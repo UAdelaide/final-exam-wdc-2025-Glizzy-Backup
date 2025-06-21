@@ -10,4 +10,4 @@ INSERT INTO Dogs VALUES ((SELECT user_id FROM Users WHERE Users.username = 'caro
 INSERT INTO Dogs VALUES ((SELECT user_id FROM Users WHERE Users.username = 'glizzy-g'), 'Pumpkin', 'medium')
 INSERT INTO Dogs VALUES ((SELECT user_id FROM Users WHERE Users.username = 'alice123'), 'Snuggle Buns Lovey Dove', 'large')
 
-INSERT INTO WalkRequests VALUES ((SELECT dog_id FROM Dogs WHERE ))
+INSERT INTO WalkRequests VALUES ((SELECT dog_id FROM Dogs WHERE Dogs.name = 'Max'), )
