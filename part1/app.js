@@ -41,9 +41,11 @@ let db;
 
     // Create a table if it doesn't exist
 
-    await db.execute(fs.readFile("./mytext.txt", function(text){
-    var textByLine = text.split("\n")
-}).to;);
+    await db.execute(
+        fs.readFile("./mytext.txt", function(text){
+            var textByLine = text.split("\n")
+        })
+    );
 
     // Insert data if table is empty
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
