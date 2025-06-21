@@ -40,7 +40,9 @@ router.get('/me', (req, res) => {
 router.post('/login', async (req, res) => {
   // Get email and password fields from form
   const { email, password } = req.body;
+
   try {
+    // 
     const [rows] = await db.query(`
       SELECT user_id, username, role FROM Users
       WHERE email = ? AND password_hash = ?
