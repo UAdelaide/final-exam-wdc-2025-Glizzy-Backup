@@ -120,16 +120,6 @@ function updatePosts() {
 }
 
 /*
- * Updates the search term then reloads the posts shown
- */
-function searchPosts(){
-
-    search = document.getElementById('post-search').value.toUpperCase();
-    updatePosts();
-
-}
-
-/*
  * Loads posts from the server
  * - Send an AJAX GET request to the server
  * - JSON Array of posts sent in response
@@ -155,6 +145,16 @@ function loadPosts() {
 
     // Send request
     xmlhttp.send();
+
+}
+
+/*
+ * Updates the search term then reloads the posts shown
+ */
+function searchPosts(){
+
+    search = document.getElementById('post-search').value.toUpperCase();
+    updatePosts();
 
 }
 
