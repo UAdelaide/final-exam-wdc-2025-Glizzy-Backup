@@ -63,7 +63,8 @@ router.post('/login', async (req, res) => {
             return res.status(500).json({ error: 'User role is invalid.' });
         }
 
-        // Stores user login in a session. Note that users with invalid roles will not get sessions stored.
+        // Stores user in a session.
+        // Note that users with invalid roles will not get sessions stored.
         req.session.user = {
             id: rows[0].user_id,
             role: rows[0].role
