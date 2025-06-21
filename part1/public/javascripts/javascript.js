@@ -12,6 +12,7 @@ createApp({
     methods: {
         Reveal(){
             if(counter>3){
+                this.visible = true;
                 this.GetDog();
             }else{
                 counter++;
