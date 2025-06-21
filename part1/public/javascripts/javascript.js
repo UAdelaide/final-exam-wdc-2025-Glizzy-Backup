@@ -11,7 +11,11 @@ createApp({
     },
     methods: {
         Reveal(){
-            
+            if(counter>3){
+                this.GetDog();
+            }else{
+                counter++;
+            }
         }
         async GetDog() {
             const res = await fetch('https://dog.ceo/api/breeds/image/random');
