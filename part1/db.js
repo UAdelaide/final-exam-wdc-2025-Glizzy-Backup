@@ -30,7 +30,7 @@ let pool;
 
     // Insert test data
     await db.execute(
-        fs.readFileSync('./part5.sql', 'utf-8').split('/n');
+        fs.readFileSync('./part5.sql', 'utf-8').split('/n')
     );
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
