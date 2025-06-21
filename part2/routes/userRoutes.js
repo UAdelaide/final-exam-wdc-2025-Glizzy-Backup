@@ -50,9 +50,9 @@ router.post('/login', async (req, res) => {
     }
 
     if(rows.role == "owner"){
-        res.sendFile(path.join(__dirname, 'public', 'owner-dashboard.html'))
+        res.sendFile(path.join(__dirname, 'public', 'owner-dashboard.html'));
     }else if(rows.role == "walker"){
-        res.sendFile(path.join(__dirname, 'public', 'walker-dashboard.html'))
+        res.sendFile(path.join(__dirname, 'public', 'walker-dashboard.html'));
     }else{
         res.json({ message: 'Invalid role', user: rows[0] });
     }
