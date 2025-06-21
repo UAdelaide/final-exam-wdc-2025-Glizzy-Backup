@@ -33,4 +33,4 @@ createApp({
         document.getElementById("reveal").style.top = Math.random()*100+"%";
         document.getElementById("reveal").style.left = Math.random()*100+"%";
     }
-}).mount('#app');
+});
