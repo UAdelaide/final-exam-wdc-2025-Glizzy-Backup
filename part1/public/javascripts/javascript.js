@@ -16,7 +16,7 @@ createApp({
             }else{
                 counter++;
             }
-        }
+        },
         async GetDog() {
             const res = await fetch('https://dog.ceo/api/breeds/image/random');
             const data = await res.json();
