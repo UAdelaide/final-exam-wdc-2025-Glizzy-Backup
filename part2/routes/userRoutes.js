@@ -53,6 +53,7 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
+    // If the user is an owner or a walker, serve the appropriate page.
     if(rows[0].role == "owner"){
         res.sendFile(path.join(__dirname, '../public/owner-dashboard.html'));
     }else if(rows[0].role == "walker"){
