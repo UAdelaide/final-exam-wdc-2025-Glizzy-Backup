@@ -9,7 +9,8 @@ let pool;
     const connection = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
-      password: '' // Set your MySQL root password
+      password: '', // Set your MySQL root password
+      multiple
     });
 
     // Create dogwalks.sql db. Note that this will reset the database every time
