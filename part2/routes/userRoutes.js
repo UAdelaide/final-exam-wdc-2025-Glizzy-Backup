@@ -39,7 +39,7 @@ router.get('/me', (req, res) => {
 // POST login (dummy version)
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
-  res.sendFile(path.join(__dirname, 'public', 'owner-dashboard.html'));
+    res.sendFile(path.join(__dirname, '../public/owner-dashboard.html'));
   try {
     const [rows] = await db.query(`
       SELECT user_id, username, role FROM Users
