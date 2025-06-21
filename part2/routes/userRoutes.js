@@ -76,18 +76,16 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', async (req, res) => {
-    const { username, email, password, role } = req.body;
+    req.session.destroy(err => {
+        if (err) {
+        console.error('Logout error:', err);
+        return res.status(500).send('Logout failed');
+        }
 
-    try {
-        const [result] = await db.query(`
-      INSERT INTO Users (username, email, password_hash, role)
-      VALUES (?, ?, ?, ?)
-    `, [username, email, password, role]);
-
-        res.status(201).json({ message: 'User registered', user_id: result.insertId });
-    } catch (error) {
-        res.status(500).json({ error: 'Registration failed' });
-    }
+        // Clear the session cookie
+        res.clearCookie('connect.sid'); // default cookie name used by express-session
+        res.redirect('/');
+    });
 });
 
 module.exports = router;
