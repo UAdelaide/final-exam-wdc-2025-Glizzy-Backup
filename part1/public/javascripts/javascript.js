@@ -13,8 +13,8 @@ createApp({
         Reveal(){
             const top = Math.floor(Math.random() * 90);
             const left = Math.floor(Math.random() * 90);
-            this.buttonStyle.top = `${top}%`;
-            this.buttonStyle.left = `${left}%`;
+            this.buttonStyle.top = ``;
+            this.buttonStyle.left = Math.floor(Math.random());
 
             if(counter>3){
                 this.visible = true;
