@@ -189,9 +189,9 @@ function login(){
         if (this.readyState == 4 && this.status == 200) {
             let rows = this.responseText.json();
             if(rows.role == "owner"){
-                window.location.href = 
+                window.location.href = owner-dashboard.html;
             }else if(rows.role == "walker"){
-                res.sendFile(path.join(__dirname, 'public', 'walker-dashboard.html'));
+                window.location.href = walker-dashboard.html;
             }else{
                 res.json({ message: 'Error: User is not a valid role.', user: rows[0] });
             }
