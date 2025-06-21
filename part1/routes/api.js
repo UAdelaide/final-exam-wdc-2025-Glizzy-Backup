@@ -5,7 +5,7 @@ const poolPromise = require('../db');
 /* GET dogs. */
 router.get('/dogs', async function (req, res, next) {
     try {
-        await
+        const pool = await poolPromise();
         // Try to fetch dogs from db.
         const [dogs] = await pool.query('SELECT name, size FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id;');
         res.json({ dogs });
