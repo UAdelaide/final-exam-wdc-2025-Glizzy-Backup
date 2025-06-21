@@ -18,13 +18,15 @@ let pool;
     await connection.end();
 
     // Now connect to the created database
-    db = await mysql.createPool({
+    pool = await mysql.createPool({
       host: 'localhost',
       user: 'root',
       password: '',
       database: 'DogWalkService',
       connectionLimit: 10
     });
+
+    await let db = pool.
 
     // Insert test data
     await db.execute(
